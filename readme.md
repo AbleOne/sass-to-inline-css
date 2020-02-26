@@ -1,6 +1,6 @@
-# Templates
+# Build
 
-Builded templates are in `\build` folder independent and ready to use 😉
+Check `\build` folder 😉
 
 
 
