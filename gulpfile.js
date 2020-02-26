@@ -21,12 +21,20 @@ gulp.task('scss', () => {
 
 
 gulp.task('inline', () => {
-	gulp.src('./index.html')
+	gulp.src('./*.html')
 	.pipe(inlineCss({
-		removeHtmlSelectors: true
+		removeStyleTags: false,
+		applyStyleTags: false,
+		removeHtmlSelectors: false
 	}))
 	.pipe(gulp.dest('build/'))
 });
+
+// gulp.task('inlineImg', () => {
+// 	gulp.src('./*.html')
+// 	.pipe(inlineSvg({svg}))
+// 	.pipe(gulp.dest('build/'))
+// });
 
 gulp.task('default', ['serve', 'scss'], () => {
 	gulp.watch('./src/scss/**/*.scss', ['scss','inline'])
